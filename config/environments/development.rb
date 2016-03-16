@@ -25,13 +25,14 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  
+
   config.assets.debug = true
   config.action_mailer.smtp_settings = {
-    address: "smtp.mandrillapp.com",
+    address: "smtp.sendgrid.net",
     port: 587,
+    authentication: "plain",
     user_name: Rails.application.secrets.email_provider_username,
-    password: Rails.application.secrets.email_provider_api_key
+    password: Rails.application.secrets.email_provider_password
   }
 
   # ActionMailer config
